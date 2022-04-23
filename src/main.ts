@@ -1,5 +1,3 @@
-import * as PIXI from "pixi.js";
-
 import "./style.css";
 
 import World from "./components/World";

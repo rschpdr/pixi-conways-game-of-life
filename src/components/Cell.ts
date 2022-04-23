@@ -1,5 +1,3 @@
-import * as PIXI from "pixi.js";
-
 export default class Cell {
   x: number;
   y: number;
