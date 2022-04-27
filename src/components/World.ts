@@ -1,35 +1,53 @@
 import Cell from "./Cell";
 
+type WorldArgs = {
+  rowCount: number;
+  colCount: number;
+  containerBackgroundColor: number;
+  cellSize: number;
+  cellLineWidth: number;
+  cellLineColor: number;
+  cellBackgroundColor: number;
+  randomAliveChance?: number | undefined;
+  simulationSpeed?: number;
+};
+
 export default class World {
   rowCount: number;
   colCount: number;
   grid: Cell[][];
   isRunning: boolean;
+  containerBackgroundColor: number;
   cellSize: number;
   cellLineWidth: number;
   cellLineColor: number;
   cellBackgroundColor: number;
   randomAliveChance: number;
+  simulationSpeed: number;
   possibleNeighborPositions: number[][];
 
-  constructor(
-    rowCount: number,
-    colCount: number,
-    cellSize: number,
-    cellLineWidth: number,
-    cellLineColor: number,
-    cellBackgroundColor: number,
-    randomAliveChance?: number | undefined
-  ) {
+  constructor({
+    rowCount,
+    colCount,
+    containerBackgroundColor,
+    cellSize,
+    cellLineWidth,
+    cellLineColor,
+    cellBackgroundColor,
+    randomAliveChance,
+    simulationSpeed = 5,
+  }: WorldArgs) {
     this.rowCount = rowCount;
     this.colCount = colCount;
     this.grid = [];
     this.isRunning = false;
+    this.containerBackgroundColor = containerBackgroundColor;
     this.cellSize = cellSize;
     this.cellLineWidth = cellLineWidth;
     this.cellLineColor = cellLineColor;
     this.cellBackgroundColor = cellBackgroundColor;
     this.randomAliveChance = randomAliveChance || 0.7;
+    this.simulationSpeed = simulationSpeed;
     this.possibleNeighborPositions = [
       [0, 1],
       [0, -1],
@@ -43,6 +61,8 @@ export default class World {
   }
 
   generateEmptyGrid() {
+    this.grid = [];
+
     for (let i = 0; i < this.rowCount; i++) {
       this.grid.push([]);
       for (let j = 0; j < this.colCount; j++) {

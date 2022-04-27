@@ -3,6 +3,76 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 1rem;
+}
+
+.controls-container {
+  display: flex;
+  margin: 1rem 0 1rem 0;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 1rem 0 1rem;
+}
+
+.form-control label {
+  margin-bottom: 0.5rem;
+  margin-left: 0.3rem;
+  font-weight: bold;
+}
+
+.form-control input {
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #cfd1d4;
+  border-image: none;
+  box-shadow: none;
+  padding: 0.8rem;
+}
+
+.form-control input[type="color"] {
+  padding: 0 2px 0 2px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.sm input {
+  width: 50%;
+}
+
+.btn {
+  cursor: pointer;
+  min-width: 90px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+summary {
+  cursor: pointer;
+}
+
+ul {
+  text-align: left;
+}
+
+ul > li {
+  padding: 0.3rem;
 }

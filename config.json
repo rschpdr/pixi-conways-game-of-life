@@ -1,0 +1,11 @@
+{
+  "rowCount": 150,
+  "colCount": 70,
+  "containerBackgroundColor": "#ffffff",
+  "cellSize": 10,
+  "cellLineWidth": 1,
+  "cellLineColor": "#b770db",
+  "cellBackgroundColor": "#b770db",
+  "randomAliveChance": 0.7,
+  "simulationSpeed": 2
+}

@@ -4,14 +4,87 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>WebGL Conway's Game of Life</title>
   </head>
   <body>
     <div id="app">
-      <button id="startBtn">Start</button>
-      <button id="randomBtn">Random</button>
-      <button id="stopBtn">Stop</button>
-      <button id="resetBtn">Reset</button>
+      <section>
+        <button class="btn" id="startBtn">Start</button>
+        <button class="btn" id="randomBtn">Random</button>
+        <button class="btn" id="stopBtn">Stop</button>
+        <button class="btn" id="resetBtn">Reset</button>
+        <p>
+          <a
+            href="https://conwaylife.com/wiki/Conway%27s_Game_of_Life"
+            target="_blank"
+            >What's this?</a
+          >
+        </p>
+        <details>
+          <summary>Help</summary>
+          <ul>
+            <li>
+              The simplest way to start a simulation is selecting the "Random"
+              button above and then "Start"
+            </li>
+            <li>
+              The cells are interactable, try drawing something in them and
+              clicking "Start". Or maybe check existing
+              <a
+                href="https://conwaylife.com/wiki/Conway%27s_Game_of_Life#Patterns"
+                >patterns</a
+              >
+            </li>
+            <li>"Stop" will pause the simulation without clearing the world</li>
+            <li>
+              "Reset" will pause the simulation AND clear the world (reset all
+              cells to "dead" state)
+            </li>
+            <li>
+              Below the grid there are some controls to customize the look of
+              the world. Be sure to click "Apply" to see the changes. WARNING:
+              "Apply" WILL reset the world (killing all live cells).
+            </li>
+            <li>
+              Depending on how many rows and columns you choose, you may face
+              layout issues (horizontal scrollbars) or performance issues
+              ("jagged" animations or frameskips)
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <main id="canvasContainer"></main>
+
+      <section class="controls-container">
+        <div class="form-control sm">
+          <label for="rowCountInput">Row count</label>
+          <input id="rowCountInput" type="number" />
+        </div>
+        <div class="form-control sm">
+          <label for="colCountInput">Column count</label>
+          <input id="colCountInput" type="number" />
+        </div>
+        <div class="form-control">
+          <label for="bgColorInput">Background Color</label>
+          <input id="bgColorInput" type="color" />
+        </div>
+        <div class="form-control sm">
+          <label for="cellSizeInput">Cell size (in pixels)</label>
+          <input id="cellSizeInput" type="number" />
+        </div>
+        <div class="form-control">
+          <label for="cellColorInput">Cell color</label>
+          <input id="cellColorInput" type="color" />
+        </div>
+        <div class="form-control">
+          <label for="simulationSpeedInput">Simulation speed</label>
+          <input id="simulationSpeedInput" type="range" min="1" max="10" />
+        </div>
+        <div style="display: flex; align-items: center">
+          <button class="btn" id="applyBtn">Apply</button>
+        </div>
+      </section>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
