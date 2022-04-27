@@ -3,8 +3,6 @@ import * as PIXI from "pixi.js";
 import World from "./World";
 import Cell from "./Cell";
 
-const generationCount = document.getElementById("generationCount");
-
 export default class Game {
   world: World;
   pixiApp: null | PIXI.Application;
