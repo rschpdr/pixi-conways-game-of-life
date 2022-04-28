@@ -8,11 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <section>
-        <button class="btn" id="startBtn">Start</button>
-        <button class="btn" id="randomBtn">Random</button>
-        <button class="btn" id="stopBtn">Stop</button>
-        <button class="btn" id="resetBtn">Reset</button>
+      <section class="header">
+        <div>
+          <button class="btn" id="startBtn">Start</button>
+          <button class="btn" id="randomBtn">Random</button>
+          <button class="btn" id="stopBtn">Stop</button>
+          <button class="btn" id="resetBtn">Reset</button>
+          <div class="gh-link">
+            <a
+              target="_blank"
+              href="https://github.com/rschpdr/pixi-conways-game-of-life"
+            >
+              View on Github
+              <img src="./assets/images/github.png" alt="Github Mark"
+            /></a>
+          </div>
+        </div>
+
         <p>
           <a
             href="https://conwaylife.com/wiki/Conway%27s_Game_of_Life"
@@ -86,6 +98,7 @@
         </div>
       </section>
     </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
